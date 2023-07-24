@@ -26,38 +26,39 @@ const AdminProductForm = ({ onAddProduct }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
+      // Assuming you have the product state initialized in your component
       const formData = new FormData();
       formData.append('image', product.image);
       formData.append('name', product.name);
       formData.append('price', product.price);
       formData.append('description', product.description);
       formData.append('stock', product.stock);
-
+  
       const response = await api.post('/products', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          'Content-Type': 'multipart/form-data',
+        },
       });
-
+  
       // Assuming the response contains the newly created product
       const newProduct = response.data;
-
+  
       // Call the callback function passed from the parent component
       onAddProduct(newProduct);
-
+  
       // Reset the form fields
       setProduct({
         name: '',
         price: '',
         description: '',
         stock: '',
-        image: ''
+        image: null, // Reset image to null (assuming the initial value for image is null)
       });
     } catch (error) {
       console.log(error);
-      // Handle the error
+      // Handle the error, e.g., show an error message to the user
     }
   };
 
