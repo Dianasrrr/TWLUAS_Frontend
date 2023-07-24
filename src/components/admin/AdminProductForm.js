@@ -35,7 +35,7 @@ const AdminProductForm = ({ onAddProduct }) => {
       formData.append('description', product.description);
       formData.append('stock', product.stock);
 
-      const response = await api.post('/products', formData, {
+      const response = await axios.post('/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
