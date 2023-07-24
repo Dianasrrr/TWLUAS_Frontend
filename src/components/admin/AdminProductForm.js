@@ -38,7 +38,7 @@ const AdminProductForm = ({ onAddProduct }) => {
 
       console.log(formData);
   
-      const response = await api.post('/products', formData, {
+      const response = await axios.post('https://twluas-backend.vercel.app/api/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
