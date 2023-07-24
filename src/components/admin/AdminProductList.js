@@ -54,7 +54,7 @@ const AdminProductList = ({ onUpdateProduct, onDeleteProduct }) => {
                     <div className="product-grid">
                         {products.map((product, index) => (
                             <div key={product.id} className={`product-item ${index >= 5 ? 'second-row' : ''}`}>
-                                <img src={'https://twluas-backend.vercel.app/img/' + product.image} alt="Product Image" />
+                                <img src={'https://twluas-backend.vercel.app/tmp/' + product.image} alt="Product Image" />
                                 <div>
                                     <strong>{product.name}</strong> - {product.price}
                                 </div>
