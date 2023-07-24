@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/auth';
+const API_URL = 'https://twluas-backend.vercel.app/auth';
 
 export const register = async (username, password) => {
     try {

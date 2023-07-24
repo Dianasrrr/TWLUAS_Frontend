@@ -63,7 +63,7 @@ const UserPage = () => {
                             {products.map((product) => (
                                 <li key={product._id} style={{backgroundColor:"rgb(117 140 137)"}}>
                                     <div>
-                                        <img src={'http://localhost:3001/img/' + product.image} alt="Product Image" />
+                                        <img src={'https://twluas-backend.vercel.app/img/' + product.image} alt="Product Image" />
                                     </div>
                                     <div>
                                         <strong>{product.name}</strong> - {product.price}
