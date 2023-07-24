@@ -35,6 +35,8 @@ const AdminProductForm = ({ onAddProduct }) => {
       formData.append('price', product.price);
       formData.append('description', product.description);
       formData.append('stock', product.stock);
+
+      console.log(formData);
   
       const response = await api.post('/products', formData, {
         headers: {
@@ -68,19 +70,19 @@ const AdminProductForm = ({ onAddProduct }) => {
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" value={product.name} onChange={handleChange} />
+          <input type="text" name="name" value={product.name} onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="price">Price:</label>
-          <input type="number" id="price" name="price" value={product.price} onChange={handleChange} />
+          <input type="number" name="price" value={product.price} onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="description">Description:</label>
-          <textarea id="description" name="description" value={product.description} onChange={handleChange}></textarea>
+          <textarea name="description" value={product.description} onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="stock">Stock:</label>
-          <input type="number" id="stock" name="stock" value={product.stock} onChange={handleChange} />
+          <input type="number" name="stock" value={product.stock} onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="image">Image:</label>
